@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import dbMenu from './DBMenu'
 import { ListItem } from './ListItem'
-import SectionImg from '../image/banner.png'
+import SectionImg from '../../image/banner.png'
 
 
 const MenuStyled = styled.main`
