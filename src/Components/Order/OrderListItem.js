@@ -30,11 +30,11 @@ const TrashButton = styled.button`
   background-repeat: no-repeat;
   corsor: pointer;
 `
-export const OrderListItem = () => (
+export const OrderListItem = ({order}) => (
   <OrderIpemStyled>
-    <ItemName>JS Burger</ItemName>
+    <ItemName>{order.name}</ItemName>
     <span>2</span>
-    <ItemPrice>750 p</ItemPrice>
+    <ItemPrice>{order.price.toLocaleString('ru-RU', {style: 'currency', currency: 'RUB'})}</ItemPrice>
     <TrashButton/>
   </OrderIpemStyled>
 
