@@ -5,12 +5,14 @@ import { ListItem } from './ListItem'
 import SectionImg from '../image/banner.png'
 
 
-const MenuStyled  =styled.main`
-
+const MenuStyled = styled.main`
+  margin-left: 380px;
   margin-top: 80px;
   height: 500px;
-`
-const SectionMenu = styled.section`
+  
+  `
+  const SectionMenu = styled.section`
+  background-color: #e9e9e9;
   padding: 30px;
 `
 
