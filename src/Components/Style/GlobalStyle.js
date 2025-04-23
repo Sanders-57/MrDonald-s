@@ -47,4 +47,14 @@ padding: 0;
 margin: 0;
 }
 
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield; /* Новее и шире */
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Chrome, Safari */
+  margin: 0; /* Иногда помогает */
+}
 `
