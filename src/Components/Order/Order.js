@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { ItemButton } from '../Style/ItemButton'
 import { OrderListItem } from './OrderListItem'
-import {TotalPriceItems} from '../Modal/ModalItem'
+import { TotalPriceItems } from '../Functions/secondaryFunctions'
+import { formatCurrency } from '../Functions/secondaryFunctions'
 
 
 
@@ -62,7 +63,7 @@ export const Order = ({orders}) => {
       <Total>
         <span>Итого</span>
         <span>5</span>
-        <TotalPrice>{total.toLocaleString('ru-RU', {style: 'currency', currency: 'RUB'})}</TotalPrice>
+        <TotalPrice>{formatCurrency(total)}</TotalPrice>
       </Total>
       <ItemButton>Оформить</ItemButton>
     </OrderStyled>
