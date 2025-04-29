@@ -15,5 +15,11 @@ export const ItemButton = styled.button`
   font-family: inherit;
   color: #fff;
   cursor: pointer;
+  &:disabled{
+    color: #bbb;
+    background-color: #ccc;
+    border-color: #aaa;
+  }
+
 `
 

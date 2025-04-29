@@ -5,7 +5,7 @@ import { TotalPriceItems } from '../Functions/secondaryFunctions'
 import { formatCurrency } from '../Functions/secondaryFunctions'
 
 const OrderIpemStyled = styled.li`
-  display: dlex;
+  display: flex;
   flex-wrap: wrap;
   margin: 15px 0;
 
@@ -47,7 +47,7 @@ export const OrderListItem = ({order}) => {
   
   return (
   <OrderIpemStyled>
-    <ItemName>{order.name}</ItemName>
+    <ItemName>{order.name} {order.choice}</ItemName>
     <span>{order.count}</span>
     <ItemPrice>{formatCurrency(TotalPriceItems(order))}</ItemPrice>
     <TrashButton/>
