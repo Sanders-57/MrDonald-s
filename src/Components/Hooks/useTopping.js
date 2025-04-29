@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const getTopping = (toppings = []) => toppings.map(item => ({
   name: item,
-  cheched: false,
+  checked: false,
 }))
 
 export function useToppings (openItem) {
@@ -12,7 +12,7 @@ export function useToppings (openItem) {
     setToppings(toppings.map((item, i) => {
       const newItem = {...item}
       if(i === index){
-        newItem.cheched = !newItem.cheched
+        newItem.checked = !newItem.checked
       }
 
       return newItem;
