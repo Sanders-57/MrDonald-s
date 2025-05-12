@@ -1,7 +1,7 @@
 import {useState} from 'react'
 
-export function useCount(){
-  const [count, setCount] = useState(1)
+export function useCount(value){
+  const [count, setCount] = useState(value || 1)
 
   const onChange = e => setCount(e.target.value)
 

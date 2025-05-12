@@ -12,6 +12,7 @@ const OrderIpemStyled = styled.li`
 `
 const ItemName = styled.span`
   flex-grow: 1;
+  
 `
 
 const ItemPrice = styled.span`
@@ -31,7 +32,7 @@ const TrashButton = styled.button`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  corsor: pointer;
+  cursor: pointer;
 `
 
 const Toppings = styled.div`
@@ -41,16 +42,24 @@ const Toppings = styled.div`
   color: #9a9a9a;
 
 `
-export const OrderListItem = ({order}) => {
+export const OrderListItem = ({order, index, removeOrder, setOpenItem}) => {
   const topping = order.topping.filter(item => item.checked).map(item => item.name).join(',')
-  console.log(topping);
   
+  // const handleDelete = () => {
+  //   removeOrder(index)
+  // }
+
   return (
-  <OrderIpemStyled>
-    <ItemName>{order.name} {order.choice}</ItemName>
+  <OrderIpemStyled onClick={()=>{
+    setOpenItem({...order, index});
+    }} >
+    <ItemName >{order.name} {order.choice}</ItemName>
     <span>{order.count}</span>
     <ItemPrice>{formatCurrency(TotalPriceItems(order))}</ItemPrice>
-    <TrashButton/>
+    <TrashButton onClick={(e)=>{
+      e.stopPropagation()
+      removeOrder(index)
+    }}/>
     {topping && <Toppings>Допы: {topping}</Toppings>}
   </OrderIpemStyled>
 
